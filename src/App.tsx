@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import Button from "./components/Button";
 import Quote from "./components/Quote";
@@ -20,7 +20,7 @@ const App = () => {
     setQuote("");
     setAuthor("");
     setLoading(true);
-    fetch("/api/random")
+    fetch("/.netlify/functions/quote")
       .then((response) => response.json())
       .then((data) => {
         setQuote(`“ ${data[0].q} ”`);
@@ -39,18 +39,15 @@ const App = () => {
 
   const handleScreenshot = async () => {
     try {
-      // 1. Capture the screenshot of the body
       const canvas = await html2canvas(document.body, {
         allowTaint: true,
         useCORS: true,
       });
 
-      // 2. Create a download link
       const link = document.createElement("a");
       link.download = "screenshot.png";
       link.href = canvas.toDataURL("image/png");
 
-      // 3. Trigger the download
       link.click();
     } catch (error) {
       console.error("Error taking screenshot:", error);

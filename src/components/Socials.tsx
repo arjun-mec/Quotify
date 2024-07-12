@@ -3,7 +3,6 @@ import "./Socials.css";
 import whatsappIcon from "../assets/whatsapp.png";
 import linkedinIcon from "../assets/linkedin.png";
 import twitterIcon from "../assets/twitter.png";
-import downloadIcon from "../assets/download.png";
 
 interface QuoteProps {
   quote: string;
