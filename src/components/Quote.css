@@ -1,0 +1,53 @@
+.quote {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+.quote h2 {
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+.quote h3 {
+  font-family: "Raleway", sans-serif;
+}
+
+.container {
+  position: relative;
+  margin-left: 65px;
+  margin-right: 65px;
+}
+
+.copy-notif {
+  visibility: hidden;
+  position: absolute;
+  bottom: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 50%;
+}
+
+.container:hover .copy-notif {
+  visibility: visible;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 0px;
+  }
+
+  .quote h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .container {
+    margin: 0;
+  }
+}

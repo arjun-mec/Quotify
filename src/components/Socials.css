@@ -1,0 +1,112 @@
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+
+.link {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.link:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.link img {
+  width: 27x;
+  height: 27px;
+  z-index: 2;
+  transition: filter 0.3s ease-in-out;
+}
+
+.link:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: inherit;
+  transition: height 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.link:hover::before {
+  height: 100%;
+}
+
+.icon-content a[aria-label="Whatsapp"]:hover::before {
+  background-color: #25d366;
+}
+
+.icon-content a[aria-label="LinkedIn"]:hover::before {
+  background-color: #0274b3;
+}
+
+.icon-content a[aria-label="Twitter"]:hover::before {
+  background-color: #1da1f2;
+}
+
+.tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+
+.icon-content a[aria-label="Whatsapp"] .tooltip {
+  background-color: #25d366;
+}
+
+.icon-content a[aria-label="LinkedIn"] .tooltip {
+  background-color: #0274b3;
+}
+
+.icon-content a[aria-label="Instagram"] .tooltip {
+  background-color: #1da1f2;
+}
+
+@media only screen and (max-width: 768px) {
+  .link {
+    width: 35px;
+    height: 35px;
+  }
+
+  .link img {
+    width: 23px;
+    height: 23px;
+  }
+}

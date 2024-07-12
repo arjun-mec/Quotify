@@ -1,0 +1,96 @@
+.preset-buttons,
+.manual-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  gap: 1rem;
+  position: fixed;
+  left: 20px;
+}
+
+.preset-buttons button {
+  font: inherit;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.manual-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color1 {
+  background-color: #f1f6f9;
+  border: 1.5px solid #212a3e;
+}
+
+.color2 {
+  background-color: #7469b6;
+  border: 1.5px solid #f7f9f2;
+}
+
+.color3 {
+  background-color: #e1afd1;
+  border: 1.5px solid #ffff80;
+}
+
+.color4 {
+  background-color: #11999e;
+  border: 1.5px solid #e4f9f5;
+}
+
+.color5 {
+  background-color: #222831;
+  border: 1.5px solid #eeeeee;
+}
+
+/* Manual edit buttons */
+
+.background,
+.foreground {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-input,
+.foreground-input {
+  background: none;
+  width: 100%;
+  height: 100%;
+}
+
+.background-icon,
+.foreground-icon {
+  position: absolute;
+  pointer-events: none;
+}
+
+.back-button {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .preset-buttons,
+  .manual-buttons {
+    position: fixed;
+    flex-direction: row;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
