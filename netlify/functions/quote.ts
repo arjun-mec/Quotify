@@ -1,11 +1,14 @@
-const fetch = require('node-fetch');
+interface QuoteResponse {
+  q: string;
+  a: string;
+  h: string;
+}
 
-exports.handler = async () => {
+export const handler = async () => { 
   try {
     const response = await fetch('https://zenquotes.io/api/random');
-    const data = await response.json();
+    const data: QuoteResponse[] = await response.json(); 
 
-    // Return the entire API response directly
     return {
       statusCode: 200,
       body: JSON.stringify(data), 
